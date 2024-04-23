@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>丝苗米生长情况</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/index.less">
+  <link rel="stylesheet" href="font/iconfont.css">
+  <link rel="stylesheet" href="font/qweather-icons.css">
+</head>
+
+<body>
+  <!-- 头部 -->
+  <header>
+    <div class="iconfont icon-menu" id="iconmenu">
+      <div class="menu">
+        <ul class="menu_super">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="jsp/search.jsp">查病虫措施</a></li>
+            <li><a href="jsp/insert.jsp">增加病虫害</a></li>
+            <li><a href="jsp/query.jsp">删除病虫害</a></li>
+          <li><a href="jsp/logout.do">退出该系统</a></li>
+        </ul>
+    </div>
+    </div>
+    <h1>丝苗米生长情况</h1>
+    <div class="showTime"></div>
+   
+  </header>
+  <!-- 页面主体 -->
+  <section class="mainbox">
+    <div class="colum">
+      <div class="panel bar">
+        <!-- panel:公共面板 -->
+        <h2>实时天气预警</h2>
+        <div class="chart">
+          <ul>
+            <li class="warning">未连接网络</li>
+            <li class="warning"></li>
+            <li class="warning"></li>
+            <li class="warning"></li>
+            <li class="warning"></li>
+          </ul>
+        </div>
+        <div class="panel-footeer"></div>
+      </div>
+      <div class="panel line">
+        <!-- panel:公共面板 -->
+        <!-- <h2>气候<a href="#" id="rainfall">降水</a><a href="#" id="temperature">温度</a></h2> -->
+        <h2>&nbsp;&nbsp;&nbsp;气候&nbsp;<a href="javacript:void(0);" id="rainfall">降水</a><a href="javacript:;" id="temperature">温度</a></h2>
+        <div class="chart"></div>
+        <div class="panel-footeer"></div>
+      </div>
+      <div class="panel pie">
+        <!-- panel:公共面板 -->
+        <h2>存在病害</h2>
+        <div class="chart"></div>
+        <div class="panel-footeer"></div>
+      </div>
+    </div>
+    <div class="colum">
+      <!-- 数字模块 -->
+      <div class="no">
+        <div class="no-hd">
+          <ul>
+            <li>待解决问题数</li>
+            <li>321</li>
+          </ul>
+        </div>
+        <!-- <div class="no-bd">
+          <ul>
+            <li>待解决问题</li>
+            <li>实际</li>
+          </ul>
+        </div> -->
+      </div>
+      <div class="map">
+        <div class="map1"></div>
+        <div class="map2"></div>
+        <div class="map3"></div>
+      </div>
+    </div>
+    <div class="colum">
+      <div class="panel soilhealth">
+        <!-- panel:公共面板 -->
+        <h2>土壤污染情况</h2>
+        <div class="chart"></div>
+        <div class="panel-footeer"></div>
+      </div>
+      <div class="panel line2">
+        <!-- panel:公共面板 -->
+        <h2>土壤水分</h2>
+        <div class="chart"></div>
+        <div class="panel-footeer"></div>
+      </div>
+      <div class="panel pie2">
+        <!-- panel:公共面板 -->
+        <h2>存在虫害</h2>
+        <div class="chart"></div>
+        <div class="panel-footeer"></div>
+      </div>
+    </div>
+  </section>
+  <!-- 注意顺序，按文件使用顺序来 -->
+  <!-- <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script> -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/echarts.min.js"></script>
+  <script src="js/flexible.js"></script>
+  <!-- <script src="https://devapi.qweather.com/v7/warning/list?range=cn&key=1fbd90fafbd045ed8d7d2ab4ff8697d4"></script> -->
+  <!-- <script src="https://devapi.qweather.com/v7/warning/now?location=101280101&lang=en&key=1fbd90fafbd045ed8d7d2ab4ff8697d4"></script> -->
+  <script src="js/index.js"></script>
+  <!-- <script src="js/myMap.js"></script> -->
+
+</body>
+
+</html>

@@ -1,0 +1,332 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+/* 声明字体*/
+@font-face {
+    font-family: electronicFont;
+    src: url(../font/DS-DIGIT.TTF);
+}
+@font-face {
+    font-family:shusong;
+    src:url("../font/shusong.ttf");
+ }
+
+body {
+    background: url(../image/background.png) no-repeat top center;
+    background-size: 100% 100%;
+    line-height: 1.15;
+}
+
+header {
+    position: relative;
+    height: 100px;
+    background: url(../image/head_bg.png) no-repeat top center;
+    background-size: 100% 100%;
+
+    
+    #iconmenu{
+        position: absolute;
+        line-height: 25px;
+        padding: 20px;
+        font-size: 50px;
+    }
+    #iconmenu:hover .menu{
+        display: block;
+    }
+
+
+    h1 {
+        color: rgb(255, 255, 255);
+        text-align: center;
+        line-height: 80px;
+        font-family: "shusong"
+    }
+
+    .showTime {
+        position: absolute;
+        right: 30px;
+        top: 0;
+        line-height: 75px;
+        color: rgb(225, 225, 225);
+        font-size: 20px;
+    }
+
+    .menu {
+        display: none;
+        position: absolute;
+        left: 20px;
+        width: 200px;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 9;
+    }
+    
+    .menu_super li {
+        height: 50px;
+        padding: 0 20px 0 40px;
+        transition: background-color 0.25s;
+        cursor: pointer;
+    }
+
+    .menu_super li:hover,
+    .menu_super li.active {
+        background-color:  rgba(186, 39, 78, 0.3);
+    }
+
+    .menu_super a {
+        color: #fff;
+        font-size: 16px;
+        line-height: 50px;
+    }
+}
+
+.mainbox {
+    display: flex;
+    min-width: 12.8rem;
+    max-width: 24rem;
+    // 盒子要有一个限定的宽高，变换时不会有变小的变化
+    margin: 0 auto;
+    padding: 10px 10px 0;
+
+    // 上左右 下
+    .colum {
+        flex: 3;// 份数
+        &:nth-child(2) {
+            flex: 5;
+            margin: 0 .125rem .1875rem;
+            overflow: hidden;
+        }
+    }
+    .panel {
+        position: relative;
+        height: 3.875rem;
+        border: .0125rem solid rgba(25, 186, 139, 0.17);
+        background: url(../image/line.png) rgba(255, 255, 255, 0.03);
+        padding: 10px 15px 40px; //从里据盒子边框的距离
+        margin-bottom: 15px; //从外据盒子边框的距离
+    
+        &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: .125rem;
+            height: .125rem;
+            border-left: .025rem solid #02a6b5;
+            border-top: .025rem solid #02a6b5;
+            content: "";
+        }
+    
+        &::after {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: .125rem;
+            height: .125rem;
+            border-right: .025rem solid #02a6b5;
+            border-top: .025rem solid #02a6b5;
+            content: "";
+        }
+    
+        h2 {
+            height: .6rem;
+            text-align: center;
+            color: white;
+            font-size: .25rem;
+        }
+
+        a{
+            color: rgb(232, 245, 235,.7);
+            text-decoration: none;
+            margin:0 .125rem;
+            font-size: .03rem;
+        }
+    
+        .chart {
+            height: 3.1rem;
+        }
+    
+        .panel-footeer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+    
+            &::before {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                content: "";
+                width: .125rem;
+                height: .125rem;
+                border-left: .025rem solid #02a6b5;
+                border-bottom: .025rem solid #02a6b5;
+                content: "";
+            }
+    
+            &::after {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                content: "";
+                width: .125rem;
+                height: .125rem;
+                border-right: .025rem solid #02a6b5;
+                border-bottom: .025rem solid #02a6b5;
+                content: "";
+            }
+        }
+    
+    }
+}
+
+
+
+// 数字模块
+// 上面是数字（no-hd)   下面 是 相关文字说明(no-bd)
+.no {
+    background: rgba(101, 132, 226, 0.1);
+    padding: .1875rem;
+
+    .no-hd {
+        position: relative;
+        border: 1px solid rgba(25, 186, 139, 0.17);
+
+        &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: "";
+            width: .375rem;
+            height: .125rem;
+            border-top: .0125rem solid #02a6b5;
+            border-left: .0125rem solid #02a6b5;
+        }
+
+        &::after {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            content: "";
+            width: .375rem;
+            height: .125rem;
+            border-bottom: .0125rem solid #02a6b5;
+            border-right: .0125rem solid #02a6b5;
+        }
+
+        ul {
+            display: flex;
+
+            li {
+                position: relative;
+                flex: 1;
+                height: 1rem;
+                padding: .05rem 0;
+                font-size: .875rem;
+                color: #ffeb7b;
+                text-align: center;
+                font-family: "electronicFont";
+
+                &:first-child::after {
+                    content: "";
+                    position: absolute;
+                    top: 25%;
+                    right: 0;
+                    height: 50%;
+                    width: .0125rem;
+                    background: rgba(255, 255, 255, 0.2);
+                }
+            }
+        }
+    }
+
+    .no-bd ul {
+        display: flex;
+        li {
+            flex: 1;
+            height: .5rem;
+            line-height: .5rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: .225rem;
+            padding-top: .125rem;
+        }
+    }
+}
+
+.map{
+    height: 10.125rem;
+    position: relative;
+    // 合并同类项
+    .map1,
+    .map2,
+    .map3{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        // 绝对定位，水平居中&垂直居中
+    }
+    .map1{
+        width: 6.475rem;
+        height: 6.475rem;
+        background: url(../image/map.png);
+        opacity:0.3;
+        // 透明度
+        background-size: 100% 100%;
+        // 图片随盒子变化而变化,background-size做公共样式好像不行
+    }
+    .map2{
+        width: 8.0375rem;
+        height: 8.0375rem;
+        background: url(../image/lbx.png) no-repeat;
+        animation:rotate1 15s linear infinite;//linear匀速;infinite无限循环
+        //默认会压住map1
+        background-size: 100% 100%;
+    }
+    // 旋转
+    @keyframes rotate1 {
+        form{
+            transform: translate(-50%, -50%) rotate(0deg);
+            // 0度
+        }
+        to{
+            transform: translate(-50%, -50%) rotate(360deg);
+        }
+    }
+    .map3{
+        width: 7.075rem;
+        height: 7.075rem;
+        background: url(../image/jt.png) no-repeat;
+        animation:rotate2 15s linear infinite;//linear匀速;infinite无限循环
+        background-size: 100% 100%;
+    }
+    //逆时针旋转
+    @keyframes rotate2 {
+        form{
+            transform: translate(-50%, -50%) rotate(0deg);
+            // 0度
+        }
+        to{
+            transform: translate(-50%, -50%) rotate(-360deg);
+        }
+    }
+
+}
+
+//屏幕尺寸约束
+@media screen and (max-width:1024px){
+    html{
+        font-size:42px !important;
+    }
+}
+@media screen and (min-width:1920px){
+    html{
+        font-size: 80px !important;
+    }
+}
